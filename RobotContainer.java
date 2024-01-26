@@ -19,9 +19,8 @@ public class RobotContainer {
     public final BeamBreak m_beamBreak = new BeamBreak();
     public final ShooterSubsystem m_shooterSubsystem=new ShooterSubsystem();
     //public final LEDsSubsystem m_leds = new LEDsSubsystem();
-    public static ArmSubsystem getArmSubsystem() {
-     return getArmSubsystem();
-    }
+  
+    
 
 // Joysticks
 private final XboxController m_controller = new XboxController(0);

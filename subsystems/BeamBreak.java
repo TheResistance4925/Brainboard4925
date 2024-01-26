@@ -4,7 +4,6 @@ import edu.wpi.first.wpilibj.AnalogInput;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.SubsystemBase;
 import frc.robot.RobotContainer;
-import frc.robot.commands.propellor;
 
 public class BeamBreak extends SubsystemBase {
 
@@ -15,19 +14,23 @@ public class BeamBreak extends SubsystemBase {
     
   }
     
-     ArmSubsystem armSubsystem = RobotContainer.getArmSubsystem();
+  
     
   //@Override
   public void periodic() {
     // This method will be called once per scheduler run
     beamVolts = beam.getAverageVoltage();
     SmartDashboard.putNumber("BeamAverageVoltage", beamVolts);
-
-   if(beamVolts >1.0){
-      
-    new propellor(armSubsystem, 0.3 );
+    SmartDashboard.putBoolean( "Is Beam broken?", isBeamBroken());
+  }    
+    public boolean isBeamBroken() {
+    if(beamVolts >1.0){
+      return true;
+    }else{
+      return false;
     }
-
+    }
+    
   }
-}
+
 
