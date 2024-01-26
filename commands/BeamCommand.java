@@ -5,7 +5,7 @@ import frc.robot.subsystems.BeamBreak;
 public class BeamCommand extends Command {
     private final ArmSubsystem m_armSubsystem;
     private final BeamBreak m_beamBreak;
-    //private boolean isBeamBroken;
+    private boolean isBeamBroken;
 
     public BeamCommand(ArmSubsystem m_armSubsystem, BeamBreak m_beamBreak, double propellorSpeed, boolean isBeamBroken) {
         this.m_armSubsystem = m_armSubsystem;
